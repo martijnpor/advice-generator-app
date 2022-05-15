@@ -1,0 +1,56 @@
+$body-background-color: $dark-blue !default;
+$body-size: 16px !default;
+$body-rendering: optimizeLegibility !default;
+$body-line-height: 1.5 !default;
+$body-family: "Manrope", serif !default;
+
+html {
+  background-color: $body-background-color;
+  font-size: $body-size;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: 300px;
+  // overflow-x: hidden;
+  // overflow-y: scroll;
+  text-rendering: $body-rendering;
+  text-size-adjust: 100%;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: $body-family;
+}
+
+body {
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1rem;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+button {
+  // color: $link;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 1rem;
+  display: inline-block;
+
+  &:hover {
+    // color: $link-hover;
+  }
+}
