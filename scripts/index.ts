@@ -2,15 +2,15 @@
 // An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
 
 (async () => {
-  const button = document.getElementById("btn-roll-dice");
-  button?.classList.add("is-loading");
+  const button = document.getElementById("btn-roll-dice") as HTMLButtonElement;
+  button.classList.add("is-loading");
 
-  button?.addEventListener("click", (e) => {
+  button.addEventListener("click", (e) => {
     rollDice();
   });
 
   const rollDice = () => {
-    button?.classList.add("is-loading");
+    button.classList.add("is-loading");
 
     fetch("https://api.adviceslip.com/advice")
       .then((response) => response.json())
@@ -22,7 +22,7 @@
         if (adviceText != null) adviceText.textContent = data.slip.advice;
       })
       .then(() => {
-        button?.classList.remove("is-loading");
+        button.classList.remove("is-loading");
       });
   };
 
