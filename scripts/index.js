@@ -11,8 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 (() => __awaiter(void 0, void 0, void 0, function* () {
-    var _a;
-    (_a = document.getElementById("btn-roll-dice")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
-        alert("click");
+    const button = document.getElementById("btn-roll-dice");
+    button === null || button === void 0 ? void 0 : button.addEventListener("click", (e) => {
+        button.classList.add("is-loading");
     });
 }))();

@@ -29,18 +29,21 @@
   }
 
   &__button {
+    @include size(48px);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $neon-green;
-    @include size(48px);
     position: absolute;
-    top: 0;
+    top: 1.5rem;
     padding: 0.875rem;
-    transform: translateY(50%);
 
     &.is-loading {
+      animation-name: spinAround;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      transition-delay: 1ms;
     }
   }
 }

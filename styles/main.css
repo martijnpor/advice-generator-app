@@ -248,6 +248,8 @@ button {
 }
 
 .card__button {
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -259,12 +261,19 @@ button {
       -ms-flex-align: center;
           align-items: center;
   background-color: #52ffa8;
-  height: 48px;
-  width: 48px;
   position: absolute;
-  top: 0;
+  top: 1.5rem;
   padding: 0.875rem;
-  -webkit-transform: translateY(50%);
-          transform: translateY(50%);
+}
+
+.card__button.is-loading {
+  -webkit-animation-name: spinAround;
+          animation-name: spinAround;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-transition-delay: 1ms;
+          transition-delay: 1ms;
 }
 /*# sourceMappingURL=main.css.map */

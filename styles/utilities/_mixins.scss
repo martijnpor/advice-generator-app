@@ -25,40 +25,6 @@
   }
 }
 
-@mixin center($width, $height: 0) {
-  position: absolute;
-
-  @if $height != 0 {
-    left: calc(50% - (#{$width} / 2));
-    top: calc(50% - (#{$height} / 2));
-  } @else {
-    left: calc(50% - (#{$width} / 2));
-    top: calc(50% - (#{$width} / 2));
-  }
-}
-
-@mixin overflow-touch {
-  -webkit-overflow-scrolling: touch;
-}
-
-@mixin placeholder {
-  $placeholders: ":-moz" ":-webkit-input" "-moz" "-ms-input";
-
-  @each $placeholder in $placeholders {
-    &:#{$placeholder}-placeholder {
-      @content;
-    }
-  }
-}
-
-// Responsiveness
-
-@mixin is-ie() {
-  @media all and (-ms-high-contrast: none) {
-    @content;
-  }
-}
-
 @mixin from($device) {
   @media screen and (min-width: $device) {
     @content;
