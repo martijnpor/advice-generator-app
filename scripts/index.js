@@ -12,7 +12,25 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const button = document.getElementById("btn-roll-dice");
+    button === null || button === void 0 ? void 0 : button.classList.add("is-loading");
     button === null || button === void 0 ? void 0 : button.addEventListener("click", (e) => {
-        button.classList.add("is-loading");
+        rollDice();
     });
+    const rollDice = () => {
+        button === null || button === void 0 ? void 0 : button.classList.add("is-loading");
+        fetch("https://api.adviceslip.com/advice")
+            .then((response) => response.json())
+            .then((data) => {
+            var adviceId = document.getElementById("advice-id");
+            if (adviceId != null)
+                adviceId.textContent = data.slip.id;
+            var adviceText = document.getElementById("advice-text");
+            if (adviceText != null)
+                adviceText.textContent = data.slip.advice;
+        })
+            .then(() => {
+            button === null || button === void 0 ? void 0 : button.classList.remove("is-loading");
+        });
+    };
+    rollDice();
 }))();

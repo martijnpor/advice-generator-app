@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! minireset.css v0.0.4 | MIT License | github.com/jgthms/minireset.css */
 html,
 body,
@@ -232,6 +233,14 @@ button {
   font-size: 1.75rem;
   text-align: center;
   margin-bottom: 1.5rem;
+}
+
+.card__body::before {
+  content: "❝";
+}
+
+.card__body::after {
+  content: "❞";
 }
 
 .card__actions {
