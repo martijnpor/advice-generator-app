@@ -2,9 +2,6 @@
 *.sketch
 *.fig
 *.xd
-*.css
-*.css.map
-*.js
 
 .DS_Store
 .prettierignore
