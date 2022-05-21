@@ -2,6 +2,10 @@
 *.sketch
 *.fig
 *.xd
+*.css
+*.css.map
+*.js
+
 .DS_Store
 .prettierignore
 # Created by .ignore support plugin (hsz.mobi)
