@@ -1,11 +1,12 @@
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./src/ts/index.ts",
   output: {
-    filename: "script/bundle.js",
+    filename: "script/[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
   },
   resolve: {
@@ -22,7 +23,8 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
-          "style-loader",
+          // "style-loader",
+          MiniCssExtractPlugin.loader,
           // Translates CSS into CommonJS
           "css-loader",
           // Compiles Sass to CSS
@@ -43,5 +45,6 @@ module.exports = {
       title: "Frontend Mentor | Advice generator app",
       template: "src/index.html",
     }),
+    new MiniCssExtractPlugin(),
   ],
 };
